@@ -1,0 +1,49 @@
+<%- include("header") -%>
+    <div class="box" id="heading">
+        <h1>My-TodoList</h1>
+    </div>
+    <!-- Passing data from the server to our template and papulating it with dynamic content -->
+    <!--Use the scriptless tag <%%> for to add scripts to run code inside in ejs namely for constrol flow purposes -->
+  
+
+    <div class="box" id="heading">
+        <h1><%= listTitle %></h1>
+
+    </div>
+    
+    <div class="box">
+        
+            <%    for(var i = 0; i<allNewItmes.length; i++){ %>
+                <!--it render a new li element space for each and every item we input-->
+                <div class="item">
+                    <input type="checkbox">
+                    <p><%=  allNewItmes[i] %></p>
+
+                </div>  
+               
+              <%  } %>
+              <form class="item" action="/" method="post">
+                <!--item save under the name of this input I call them new Item -->
+                <input type="text" name="newItem" placeholder="Type New Item" autocomplete="off">
+                <button class="button1" type="submit" name="list" value=<%= listTitle %>>+</button><br>
+                
+        
+
+    </div>
+    <div class="box">
+        <button class="resetB" type="reset">Reset The Input</button>
+    </div>
+    
+    
+
+    
+
+    <!--trigered the post request to the home route-->
+    
+   
+        
+    </form>
+    
+    <%- include("footer") -%>
+   
+   
